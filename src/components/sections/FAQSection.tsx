@@ -6,35 +6,50 @@ const FAQSection = () => {
   // FAQ data
   const faqs = [
     {
-      question: "What does 'lorem ipsum' actually mean?",
-      answer: "Lorem ipsum is dummy text used in laying out print, graphic or web designs. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+      question: "What are the basic accessibility requirements for websites?",
+      answer: "Basic accessibility requirements include proper heading structure, alternative text for images, keyboard navigability, sufficient color contrast, form labels, and ARIA attributes where needed. Websites should follow WCAG guidelines (Web Content Accessibility Guidelines) to ensure they are accessible to people with various disabilities.",
+      defaultOpen: true
     },
     {
-      question: "How do we know what kind of sounds dinosaurs made?",
-      answer: "Scientists study fossilized vocal organs, compare with living relatives like birds and crocodiles, and analyze skull structure to make educated guesses about dinosaur sounds."
+      question: "How do accessibility requirements differ across industries?",
+      answer: "While core accessibility principles remain the same, requirements can vary by industry. Government websites often have stricter compliance needs (Section 508), while healthcare and financial services may need to consider additional privacy and usability features. E-commerce sites focus heavily on product descriptions and checkout processes, and educational platforms need accessible learning materials.",
+      defaultOpen: false
     },
     {
-      question: "Why work from home is not as fun as we thought it would be?",
-      answer: "Working from home can blur work-life boundaries, reduce social interaction, create distractions, and lead to zoom fatigue. The lack of separation between work and personal space can also increase stress."
+      question: "What are the legal implications of having an inaccessible website?",
+      answer: "Inaccessible websites can lead to legal challenges under laws like the Americans with Disabilities Act (ADA), with increasing litigation in recent years. Organizations may face lawsuits, financial penalties, mandatory remediation, damage to reputation, and loss of potential customers. Implementing accessibility standards proactively is both legally prudent and beneficial for business.",
+      defaultOpen: false
     },
     {
-      question: "In what way did human beings start using words?",
-      answer: "Language likely evolved gradually from gestures and simple vocalizations to more complex communication systems. Archaeological evidence suggests symbolic communication began at least 100,000 years ago."
+      question: "How long does it typically take to make a website accessible?",
+      answer: "The timeline depends on your website's size and complexity. Small sites might take weeks, while larger platforms could take several months. Our assessment process identifies key issues and creates a prioritized remediation plan to address critical barriers first, ensuring steady improvement in accessibility.",
+      defaultOpen: false
     },
     {
-      question: "Which is the least developed area in the world",
-      answer: "According to various development indexes, regions in Sub-Saharan Africa, particularly countries like South Sudan, Central African Republic, and Niger consistently rank among the least developed areas in the world."
+      question: "Can accessibility improvements also benefit users without disabilities?",
+      answer: "Absolutely! Accessibility improvements often enhance usability for everyone. Features like clearer navigation, better organized content, and keyboard shortcuts benefit all users. Additionally, accessibility improvements often lead to better SEO, improved mobile experiences, and faster load times.",
+      defaultOpen: false
     }
   ];
 
   return (
-    <section id="faq" className="section-padding bg-black">
-      <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+    <section id="faq" className="py-24 md:py-32 bg-black">
+      <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <FaqItem key={index} question={faq.question} answer={faq.answer} />
-          ))}
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+          <p className="text-xl text-gray-300 mb-12 text-center">
+            Find answers to common questions about web accessibility and our services
+          </p>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <FaqItem 
+                key={index} 
+                question={faq.question} 
+                answer={faq.answer} 
+                defaultOpen={faq.defaultOpen}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
