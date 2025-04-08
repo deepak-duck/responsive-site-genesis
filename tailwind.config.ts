@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for the accessibility website
+				akcess: {
+					black: '#121212',
+					lime: '#D2FB50',
+					darkgray: '#222222',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
