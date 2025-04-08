@@ -25,15 +25,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, standards
   };
   
   return (
-    <div className="bg-white text-akcess-black p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+    <div className="bg-akcess-darkgray text-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="mb-4 text-akcess-lime">
         <Icon size={32} strokeWidth={1.5} />
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-700 mb-4 leading-relaxed flex-grow">{description}</p>
+      <p className="text-gray-300 mb-4 leading-relaxed flex-grow">{description}</p>
       <div className="text-sm mb-6">
         {standards.map((standard, idx) => (
-          <p key={idx} className="my-1 text-gray-600">{standard}</p>
+          <p key={idx} className="my-1 text-gray-400">{standard}</p>
         ))}
       </div>
       <Button 

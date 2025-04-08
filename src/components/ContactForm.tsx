@@ -80,7 +80,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate aria-label="Contact form">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-1">
+        <label htmlFor="name" className="block text-sm font-medium mb-1 text-white">
           Name <span className="text-red-500" aria-hidden="true">*</span>
         </label>
         <input
@@ -103,7 +103,7 @@ const ContactForm = () => {
       </div>
       
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">
+        <label htmlFor="email" className="block text-sm font-medium mb-1 text-white">
           Email <span className="text-red-500" aria-hidden="true">*</span>
         </label>
         <input
@@ -126,7 +126,7 @@ const ContactForm = () => {
       </div>
       
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1">
+        <label htmlFor="message" className="block text-sm font-medium mb-1 text-white">
           Message <span className="text-red-500" aria-hidden="true">*</span>
         </label>
         <textarea
