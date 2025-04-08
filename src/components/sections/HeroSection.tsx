@@ -40,8 +40,7 @@ const HeroSection = () => {
               Become a Client
             </Button>
             <Button 
-              variant="outline" 
-              className="border-white text-lg hover:bg-white hover:text-akcess-black py-6 px-8 rounded-md transition-all duration-300"
+              className="lime-button text-lg py-6 px-8 rounded-md"
               onClick={handleConsultation}
             >
               Schedule a Consultation
