@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import ContactForm from '@/components/ContactForm';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactUs = () => {
   return (
@@ -118,6 +120,7 @@ const ContactUs = () => {
 
 // Extended contact form with phone field
 const ContactFormWithPhone = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -182,15 +185,18 @@ const ContactFormWithPhone = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Success
-      toast.success('Message sent successfully!', {
-        description: 'We will get back to you shortly.',
+      toast({
+        title: "Message sent successfully!",
+        description: "We will get back to you shortly.",
       });
       
       // Reset form
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
-      toast.error('Failed to send message', {
-        description: 'Please try again later.',
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
